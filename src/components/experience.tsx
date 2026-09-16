@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import type { Dictionary } from "@/i18n/types";
 import { ArrowIcon } from "./icons";
 import { SectionHead } from "./section-head";
@@ -32,41 +32,69 @@ export function Experience({ dict }: { dict: Dictionary["experience"] }) {
     trackRef.current?.scrollBy({ left: direction * CARD_STEP, behavior: "smooth" });
   }
 
+  function startDrag(e: ReactPointerEvent<HTMLDivElement>) {
+    const track = trackRef.current;
+    if (!track || e.pointerType !== "mouse" || e.button !== 0) return;
+    const startX = e.clientX;
+    const startLeft = track.scrollLeft;
+    track.style.scrollSnapType = "none";
+    track.style.cursor = "grabbing";
+    const move = (ev: PointerEvent) => {
+      track.scrollLeft = startLeft - (ev.clientX - startX);
+    };
+    const end = () => {
+      track.style.scrollSnapType = "";
+      track.style.cursor = "";
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", end);
+    };
+    window.addEventListener("pointermove", move);
+    window.addEventListener("pointerup", end);
+  }
+
   const arrow =
-    "grid h-10 w-10 place-items-center rounded-full border border-line bg-surface transition-[opacity,border-color,transform] hover:border-rose disabled:pointer-events-none disabled:opacity-35";
+    "absolute top-[58%] z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-line bg-surface/90 shadow-[0_10px_24px_-12px_rgba(43,32,39,0.5)] backdrop-blur transition-[opacity,border-color,transform] hover:scale-105 hover:border-rose disabled:pointer-events-none disabled:opacity-0 max-[640px]:h-10 max-[640px]:w-10";
+  const fade = "pointer-events-none absolute inset-y-0 z-[5] w-16 transition-opacity duration-300";
 
   return (
     <section id="experiencia" className="mx-auto max-w-5xl px-5 py-12">
-      <div className="flex items-end justify-between gap-4">
-        <SectionHead eyebrow={dict.eyebrow} title={dict.title} />
-        <div className="mb-7 flex gap-2">
-          <button
-            type="button"
-            onClick={() => scroll(-1)}
-            disabled={atStart}
-            aria-label={dict.prev}
-            className={arrow}
-          >
-            <ArrowIcon className="h-4 w-4 rotate-180 stroke-ink" />
-          </button>
-          <button
-            type="button"
-            onClick={() => scroll(1)}
-            disabled={atEnd}
-            aria-label={dict.next}
-            className={arrow}
-          >
-            <ArrowIcon className="h-4 w-4 stroke-ink" />
-          </button>
-        </div>
-      </div>
+      <SectionHead eyebrow={dict.eyebrow} title={dict.title} />
+
+      <div className="reveal relative">
+        <div
+          aria-hidden="true"
+          className={`${fade} -left-5 bg-gradient-to-r from-ground to-transparent ${atStart ? "opacity-0" : ""}`}
+        />
+        <div
+          aria-hidden="true"
+          className={`${fade} -right-5 bg-gradient-to-l from-ground to-transparent ${atEnd ? "opacity-0" : ""}`}
+        />
+        <button
+          type="button"
+          onClick={() => scroll(-1)}
+          disabled={atStart}
+          aria-label={dict.prev}
+          className={`${arrow} -left-3 max-[640px]:-left-1 min-[1180px]:-left-16`}
+        >
+          <ArrowIcon className="h-5 w-5 rotate-180 stroke-ink" />
+        </button>
+        <button
+          type="button"
+          onClick={() => scroll(1)}
+          disabled={atEnd}
+          aria-label={dict.next}
+          className={`${arrow} -right-3 max-[640px]:-right-1 min-[1180px]:-right-16`}
+        >
+          <ArrowIcon className="h-5 w-5 stroke-ink" />
+        </button>
 
       <div
         ref={trackRef}
         tabIndex={0}
         role="region"
         aria-label={dict.title}
-        className="reveal timeline-track -mx-5 snap-x snap-mandatory overflow-x-auto scroll-px-5 px-5 pb-4"
+        onPointerDown={startDrag}
+        className="timeline-track -mx-5 cursor-grab snap-x snap-mandatory overflow-x-auto scroll-px-5 px-5 pb-4 select-none"
       >
         <div className="relative w-max">
         <div
@@ -107,6 +135,7 @@ export function Experience({ dict }: { dict: Dictionary["experience"] }) {
           ))}
         </ol>
         </div>
+      </div>
       </div>
     </section>
   );
