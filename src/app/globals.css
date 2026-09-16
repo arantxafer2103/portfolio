@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --ground: #fbf5f1;
+  --surface: #ffffff;
+  --surface-soft: #f5eae4;
+  --ink: #2b2027;
+  --ink-soft: #6e5c63;
+  --line: #e7d8d1;
+
+  --rose: #c1697a;
+  --rose-soft: #f3dee1;
+  --ochre: #b97728;
+  --ochre-soft: #f1dfbe;
+  --sky: #396e80;
+  --sky-soft: #d8e7ea;
+  --sage: #4f7a52;
+  --sage-soft: #dde9d9;
+  --coral: #c8613f;
+  --coral-soft: #f4dace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #1c1417;
+    --surface: #251b1f;
+    --surface-soft: #31242a;
+    --ink: #f5eae7;
+    --ink-soft: #c7b2b9;
+    --line: #40303a;
+
+    --rose: #e39aa6;
+    --rose-soft: #432b31;
+    --ochre: #e3a968;
+    --ochre-soft: #3d2e1b;
+    --sky: #86bdcc;
+    --sky-soft: #20343a;
+    --sage: #96bb93;
+    --sage-soft: #25301f;
+    --coral: #e58e6e;
+    --coral-soft: #3e271f;
+  }
+}
+
+@theme inline {
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-karla);
+
+  --color-ground: var(--ground);
+  --color-surface: var(--surface);
+  --color-surface-soft: var(--surface-soft);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+
+  --color-rose: var(--rose);
+  --color-rose-soft: var(--rose-soft);
+  --color-ochre: var(--ochre);
+  --color-ochre-soft: var(--ochre-soft);
+  --color-sky: var(--sky);
+  --color-sky-soft: var(--sky-soft);
+  --color-sage: var(--sage);
+  --color-sage-soft: var(--sage-soft);
+  --color-coral: var(--coral);
+  --color-coral-soft: var(--coral-soft);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), Georgia, serif;
+  text-wrap: balance;
+}
