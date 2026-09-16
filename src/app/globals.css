@@ -1,25 +1,49 @@
 @import "tailwindcss";
 
 :root {
-  --ground: #fbeeef;
+  --ground: #fbf5f1;
   --surface: #ffffff;
-  --surface-soft: #f6e4e6;
+  --surface-soft: #f5eae4;
   --ink: #2b2027;
-  --ink-soft: #6a575e;
-  --line: #ecd5d8;
+  --ink-soft: #6e5c63;
+  --line: #e7d8d1;
 
-  --rose: #a94f62;
-  --rose-soft: #f4d9de;
-  --ochre: #9a6220;
-  --ochre-soft: #f3e2c6;
-  --sky: #336577;
-  --sky-soft: #dbe9ec;
-  --sage: #466f49;
-  --sage-soft: #e0ebdc;
-  --coral: #b95536;
-  --coral-soft: #f5dcd2;
+  --rose: #c1697a;
+  --rose-soft: #f3dee1;
+  --ochre: #b97728;
+  --ochre-soft: #f1dfbe;
+  --sky: #396e80;
+  --sky-soft: #d8e7ea;
+  --sage: #4f7a52;
+  --sage-soft: #dde9d9;
+  --coral: #c8613f;
+  --coral-soft: #f4dace;
   --on-accent: #ffffff;
   color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ground: #1c1417;
+    --surface: #251b1f;
+    --surface-soft: #31242a;
+    --ink: #f5eae7;
+    --ink-soft: #c7b2b9;
+    --line: #40303a;
+
+    --rose: #e39aa6;
+    --rose-soft: #432b31;
+    --ochre: #e3a968;
+    --ochre-soft: #3d2e1b;
+    --sky: #86bdcc;
+    --sky-soft: #20343a;
+    --sage: #96bb93;
+    --sage-soft: #25301f;
+    --coral: #e58e6e;
+    --coral-soft: #3e271f;
+    --on-accent: #1c1417;
+  }
 }
 
 @theme inline {
@@ -202,12 +226,12 @@ dialog.sheet-dialog[open]::backdrop {
   from {
     box-shadow:
       0 0 0 3px var(--rose-soft),
-      0 0 0 3px rgb(169 79 98 / 0.45);
+      0 0 0 3px rgb(193 105 122 / 0.45);
   }
   to {
     box-shadow:
       0 0 0 3px var(--rose-soft),
-      0 0 0 14px rgb(169 79 98 / 0);
+      0 0 0 14px rgb(193 105 122 / 0);
   }
 }
 

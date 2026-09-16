@@ -93,7 +93,7 @@ export function Experience({ dict }: { dict: Dictionary["experience"] }) {
                   }`}
                 />
               </div>
-              <article className="group mt-2 flex flex-1 flex-col rounded-[20px] border border-line bg-surface p-5 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-rose hover:shadow-[0_18px_36px_-24px_rgba(169,79,98,0.5)]">
+              <article className="group mt-2 flex flex-1 flex-col rounded-[20px] border border-line bg-surface p-5 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-rose hover:shadow-[0_18px_36px_-24px_rgba(193,105,122,0.55)]">
                 {job.current && (
                   <span className="mb-2 self-start rounded-full bg-sage-soft px-2.5 py-0.5 text-[0.7rem] font-bold uppercase tracking-wider text-sage">
                     {dict.ongoing}
