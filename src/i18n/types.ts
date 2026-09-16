@@ -13,7 +13,6 @@ export type Plan = {
   destination: string;
   teaser: string;
   objectives: string[];
-  areas: string[];
   activities: string[];
   materials: string[];
   vocab: string[];
@@ -26,6 +25,7 @@ export type Dictionary = {
     experience: string;
     education: string;
     methodology: string;
+    digital: string;
     programming: string;
     contact: string;
     skip: string;
@@ -45,9 +45,18 @@ export type Dictionary = {
     eyebrow: string;
     title: string;
     intro: string;
-    corners: string[];
+    corners: { desc: string; detail: string }[];
+    materialsLabel: string;
+    openLabel: string;
     callout: string;
     credit: string;
+  };
+  digital: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: { title: string; text: string; tags: string[] }[];
+    note: string;
   };
   programming: {
     eyebrow: string;
@@ -55,14 +64,24 @@ export type Dictionary = {
     intro: string;
     cta: string;
     duration: string;
+    decreeBadge: string;
     labels: {
+      tabPlan: string;
+      tabCurriculum: string;
       objectives: string;
-      areas: string;
       activities: string;
       materials: string;
       vocab: string;
       evaluation: string;
       close: string;
+      eixos: string;
+      generalObjectives: string;
+      competences: string;
+      criteria: string;
+      sabers: string;
+      eix: string;
+      competence: string;
+      source: string;
     };
     plans: Plan[];
   };

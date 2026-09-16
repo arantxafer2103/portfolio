@@ -14,6 +14,7 @@ export function Nav({ lang, dict }: Props) {
     { id: "experiencia", label: dict.experience },
     { id: "formacion", label: dict.education },
     { id: "metodologia", label: dict.methodology },
+    { id: "tecnologia", label: dict.digital },
     { id: "programacion", label: dict.programming },
     { id: "contacto", label: dict.contact },
   ];

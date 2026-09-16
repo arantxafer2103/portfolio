@@ -10,6 +10,7 @@ export const es: Dictionary = {
     experience: "Experiencia",
     education: "Formación",
     methodology: "Metodología",
+    digital: "Tecnología",
     programming: "Programación",
     contact: "Contacto",
     skip: "Saltar al contenido",
@@ -76,32 +77,93 @@ export const es: Dictionary = {
     intro:
       "Es la metodología de inglés temprano con la que he trabajado en el aula. Parte de una idea sencilla: si el inglés se introduce antes de que entren en juego la traducción y la corrección de errores, se adquiere de forma natural, igual que la lengua materna. Las sesiones duran una hora, son 100% en inglés y rotan por seis espacios o corners.",
     corners: [
-      "Asamblea inicial: emociones, día, tiempo, colores y números para entrar en el idioma jugando.",
-      "Sonidos, pronunciación y primeros pasos de lectoescritura en inglés.",
-      "Movimiento y psicomotricidad: el idioma también se aprende con el cuerpo.",
-      "Arte y pequeños experimentos STEM en inglés.",
-      "Cuentacuentos y comprensión lectora con historias propias del método.",
-      "Recursos para que las familias sigan practicando en casa.",
+      {
+        desc: "Asamblea inicial: emociones, día, tiempo, colores y números para entrar en el idioma jugando.",
+        detail:
+          "Abre la sesión con juegos de asamblea y calentamiento. Nos saludamos, contamos cómo nos sentimos, hablamos del día y del tiempo y repasamos colores y números: una rutina que da seguridad y pone al grupo en «modo inglés».",
+      },
+      {
+        desc: "Sonidos, pronunciación y primeros pasos de lectoescritura en inglés.",
+        detail:
+          "Con el método GLP Phonics se trabajan la pronunciación y la comprensión auditiva: sonidos, canciones y juegos que preparan el camino hacia la lectoescritura en inglés.",
+      },
+      {
+        desc: "Movimiento y psicomotricidad: el idioma también se aprende con el cuerpo.",
+        detail:
+          "Juegos colaborativos basados en el movimiento. El vocabulario se entiende y se fija con el cuerpo mientras se trabajan la psicomotricidad, la coordinación y la cooperación.",
+      },
+      {
+        desc: "Arte y pequeños experimentos STEM en inglés.",
+        detail:
+          "Un espacio para la imaginación, la creatividad y la expresión artística: manualidades y pequeños experimentos STEM conectados con el tema de la sesión, siempre en inglés.",
+      },
+      {
+        desc: "Cuentacuentos y comprensión lectora con historias propias del método.",
+        detail:
+          "Cuentacuentos con las historias del método para desarrollar la comprensión y la expresión oral. Los niños manipulan escenas y personajes y recrean la historia.",
+      },
+      {
+        desc: "Recursos para que las familias sigan practicando en casa.",
+        detail:
+          "Blended learning: las familias reciben recursos digitales e imprimibles para seguir practicando en casa y dar continuidad a lo aprendido en el aula.",
+      },
     ],
+    materialsLabel: "Materiales del método",
+    openLabel: "Ver más",
     callout:
       "En el aula combino estos corners con materiales sensoriales y manipulativos — flashcards, mystery boxes, peluches, pañuelos de colores — para que cada sesión tenga siempre un componente de juego, movimiento y cuento.",
     credit: "Metodología desarrollada por Great Little People —",
+  },
+  digital: {
+    eyebrow: "Competencia digital",
+    title: "Tecnología, gamificación e IA",
+    intro:
+      "Uso la tecnología como aliada del juego, no como sustituta: preparo materiales visuales e interactivos, diseño dinámicas gamificadas y me apoyo en la inteligencia artificial para planificar y adaptar las propuestas a cada grupo.",
+    items: [
+      {
+        title: "Materiales visuales e interactivos",
+        text: "Diseño fichas, cartelería de aula, cuentos ilustrados y presentaciones interactivas adaptadas a la edad y a los objetivos de cada propuesta.",
+        tags: ["Canva", "Genially"],
+      },
+      {
+        title: "Gamificación",
+        text: "Convierto el repaso y el refuerzo en un juego con retos, niveles y recompensas que mantienen la motivación y hacen visible el progreso.",
+        tags: ["Retos", "Recompensas", "Juegos interactivos"],
+      },
+      {
+        title: "Inteligencia artificial",
+        text: "Me apoyo en herramientas de IA para generar ideas de actividades, adaptar y traducir materiales y personalizar el refuerzo, siempre con criterio pedagógico y revisión propia.",
+        tags: ["IA generativa", "Personalización", "Traducción"],
+      },
+    ],
+    note: "Con los más pequeños, la tecnología se queda del lado de la preparación: en el aula mandan el juego, la manipulación y el vínculo.",
   },
   programming: {
     eyebrow: "Ejemplo de trabajo",
     title: "Programación de aula",
     intro:
-      "Programación pensada para un curso completo con niños y niñas de 2–3 años, con una línea de aprendizaje coherente: en cada estación, el grupo «viaja» a un país distinto según su clima, y todas las actividades —cuentos, canciones, manualidades, juego sensorial— giran alrededor de ese destino, con algo de vocabulario en inglés. Pulsa una tarjeta para ver su ficha técnica.",
+      "Programación pensada para un curso completo con niños y niñas de 2–3 años, con una línea de aprendizaje coherente: en cada estación, el grupo «viaja» a un país distinto según su clima, y todas las actividades —cuentos, canciones, manualidades, juego sensorial— giran alrededor de ese destino, con algo de vocabulario en inglés. Cada ficha técnica incluye su vinculación con el currículum de Catalunya (Decret 21/2023). Pulsa una tarjeta para verla.",
     cta: "Ver ficha técnica",
     duration: "Duración: 3 semanas",
+    decreeBadge: "Decret 21/2023 · Ejes",
     labels: {
-      objectives: "Objetivos",
-      areas: "Áreas trabajadas",
+      tabPlan: "Propuesta",
+      tabCurriculum: "Currículum",
+      objectives: "Objetivos didácticos",
       activities: "Actividades",
       materials: "Materiales",
       vocab: "Vocabulario en inglés",
       evaluation: "Evaluación",
       close: "Cerrar",
+      eixos: "Ejes de desarrollo y aprendizaje",
+      generalObjectives: "Objetivos generales de la etapa (art. 4)",
+      competences: "Competencias específicas",
+      criteria: "Criterios de evaluación",
+      sabers: "Saberes · primer ciclo",
+      eix: "Eje",
+      competence: "CE",
+      source:
+        "Decret 21/2023, de 7 de febrero, de ordenación de las enseñanzas de la educación infantil (DOGC núm. 8851). Traducción propia del texto oficial en catalán.",
     },
     plans: [
       {
@@ -114,11 +176,6 @@ export const es: Dictionary = {
           "Explorar los cambios del entorno natural en otoño a través de los sentidos.",
           "Desarrollar la motricidad fina mediante la manipulación y clasificación de elementos naturales.",
           "Iniciar al grupo en vocabulario básico en inglés relacionado con el otoño.",
-        ],
-        areas: [
-          "Descubrimiento del entorno: el bosque y el ciclo de las hojas",
-          "Comunicación y lenguajes: cuentos y canciones",
-          "Coordinación óculo-manual",
         ],
         activities: [
           "Recogida de hojas en el patio y clasificación por colores y tamaños",
@@ -149,11 +206,6 @@ export const es: Dictionary = {
           "Ampliar el vocabulario relacionado con el frío y las estaciones.",
           "Fomentar la expresión corporal y musical mediante canciones de invierno.",
         ],
-        areas: [
-          "Descubrimiento del entorno: el frío y la nieve",
-          "Comunicación y lenguajes: canción y expresión plástica",
-          "Desarrollo motriz",
-        ],
         activities: [
           "Juego sensorial con nieve artificial (bicarbonato + espuma de afeitar)",
           "Canción «Frío, frío» con gestos y movimiento",
@@ -182,11 +234,6 @@ export const es: Dictionary = {
           "Reconocer colores vivos a través de la manipulación de flores.",
           "Fomentar el cuidado del entorno natural.",
         ],
-        areas: [
-          "Descubrimiento del entorno: ciclo de vida de las plantas",
-          "Actitudes de cuidado y respeto",
-          "Psicomotricidad fina",
-        ],
         activities: [
           "Plantación de bulbos de tulipán en macetas individuales",
           "Registro diario del crecimiento con dibujos",
@@ -214,11 +261,6 @@ export const es: Dictionary = {
           "Disfrutar del juego sensorial con agua y arena de forma segura.",
           "Asociar vocabulario del mar a elementos reales.",
           "Desarrollar la creatividad mediante manualidades con elementos naturales.",
-        ],
-        areas: [
-          "Descubrimiento del entorno: el mar y la playa",
-          "Juego simbólico",
-          "Expresión plástica",
         ],
         activities: [
           "Juego de agua con vasos, embudos y coladores",

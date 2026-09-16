@@ -10,6 +10,7 @@ export const en: Dictionary = {
     experience: "Experience",
     education: "Education",
     methodology: "Methodology",
+    digital: "Technology",
     programming: "Teaching plan",
     contact: "Contact",
     skip: "Skip to content",
@@ -76,32 +77,93 @@ export const en: Dictionary = {
     intro:
       "This is the early English methodology I have worked with in the classroom. It rests on a simple idea: if English is introduced before translation and error correction come into play, children pick it up naturally, just like their mother tongue. Sessions last one hour, run 100% in English and rotate through six spaces, or corners.",
     corners: [
-      "Opening circle time: feelings, days, weather, colours and numbers to ease into the language through play.",
-      "Sounds, pronunciation and first steps in reading and writing in English.",
-      "Movement and psychomotor play: language is learnt with the body too.",
-      "Art and small STEM experiments in English.",
-      "Storytelling and reading comprehension with the method's own stories.",
-      "Resources so families can keep practising at home.",
+      {
+        desc: "Opening circle time: feelings, days, weather, colours and numbers to ease into the language through play.",
+        detail:
+          "The session opens with circle-time and warm-up games. We say hello, share how we feel, talk about the day and the weather and go over colours and numbers — a routine that builds security and puts the group in “English mode”.",
+      },
+      {
+        desc: "Sounds, pronunciation and first steps in reading and writing in English.",
+        detail:
+          "The GLP Phonics method develops pronunciation and listening comprehension through sounds, songs and games that pave the way towards reading and writing in English.",
+      },
+      {
+        desc: "Movement and psychomotor play: language is learnt with the body too.",
+        detail:
+          "Collaborative, movement-based games. Vocabulary is understood and remembered through the body while children work on motor skills, coordination and cooperation.",
+      },
+      {
+        desc: "Art and small STEM experiments in English.",
+        detail:
+          "A space for imagination, creativity and artistic expression: crafts and small STEM experiments linked to the session's theme, always in English.",
+      },
+      {
+        desc: "Storytelling and reading comprehension with the method's own stories.",
+        detail:
+          "Storytelling with the method's own tales to build comprehension and speaking skills. Children handle scenes and characters and act the story out.",
+      },
+      {
+        desc: "Resources so families can keep practising at home.",
+        detail:
+          "Blended learning: families receive digital and printable resources so children can keep practising at home and carry on what they learnt in class.",
+      },
     ],
+    materialsLabel: "Materials in the method",
+    openLabel: "See more",
     callout:
       "In the classroom I combine these corners with sensory, hands-on materials — flashcards, mystery boxes, teddies, coloured scarves — so every session always includes play, movement and a story.",
     credit: "Methodology developed by Great Little People —",
+  },
+  digital: {
+    eyebrow: "Digital skills",
+    title: "Technology, gamification & AI",
+    intro:
+      "I use technology as an ally of play, not a replacement for it: I create visual and interactive materials, design gamified activities and use artificial intelligence to plan and adapt activities to each group.",
+    items: [
+      {
+        title: "Visual & interactive materials",
+        text: "I design worksheets, classroom displays, illustrated stories and interactive presentations tailored to each age group and each activity's goals.",
+        tags: ["Canva", "Genially"],
+      },
+      {
+        title: "Gamification",
+        text: "I turn revision and extra support into a game with challenges, levels and rewards that keep motivation high and make progress visible.",
+        tags: ["Challenges", "Rewards", "Interactive games"],
+      },
+      {
+        title: "Artificial intelligence",
+        text: "I use AI tools to come up with activity ideas, adapt and translate materials and personalise support — always with pedagogical judgement and my own review.",
+        tags: ["Generative AI", "Personalisation", "Translation"],
+      },
+    ],
+    note: "With the youngest children, technology stays on the preparation side: in the classroom, play, hands-on exploration and connection come first.",
   },
   programming: {
     eyebrow: "Sample work",
     title: "Classroom plan",
     intro:
-      "A plan designed for a full school year with children aged 2–3, following one coherent learning thread: each season the group “travels” to a different country depending on its climate, and every activity — stories, songs, crafts, sensory play — revolves around that destination, with a little English vocabulary. Tap a card to see its full plan.",
+      "A plan designed for a full school year with children aged 2–3, following one coherent learning thread: each season the group “travels” to a different country depending on its climate, and every activity — stories, songs, crafts, sensory play — revolves around that destination, with a little English vocabulary. Each plan is linked to the Catalan early years curriculum (Decree 21/2023). Tap a card to see it.",
     cta: "View full plan",
     duration: "Duration: 3 weeks",
+    decreeBadge: "Decree 21/2023 · Axes",
     labels: {
-      objectives: "Objectives",
-      areas: "Learning areas",
+      tabPlan: "Plan",
+      tabCurriculum: "Curriculum",
+      objectives: "Learning objectives",
       activities: "Activities",
       materials: "Materials",
       vocab: "English vocabulary",
       evaluation: "Assessment",
       close: "Close",
+      eixos: "Development and learning axes",
+      generalObjectives: "General stage objectives (art. 4)",
+      competences: "Specific competences",
+      criteria: "Assessment criteria",
+      sabers: "Knowledge · first cycle (0–3)",
+      eix: "Axis",
+      competence: "SC",
+      source:
+        "Catalan Decree 21/2023 of 7 February on early childhood education (DOGC no. 8851). Own translation of the official Catalan text.",
     },
     plans: [
       {
@@ -114,11 +176,6 @@ export const en: Dictionary = {
           "Explore the changes autumn brings to the natural world through the senses.",
           "Develop fine motor skills by handling and sorting natural materials.",
           "Introduce the group to basic English vocabulary about autumn.",
-        ],
-        areas: [
-          "Discovering the environment: the forest and the life cycle of leaves",
-          "Communication and languages: stories and songs",
-          "Hand–eye coordination",
         ],
         activities: [
           "Collecting leaves in the playground and sorting them by colour and size",
@@ -149,11 +206,6 @@ export const en: Dictionary = {
           "Expand vocabulary related to cold weather and the seasons.",
           "Encourage body and musical expression through winter songs.",
         ],
-        areas: [
-          "Discovering the environment: cold and snow",
-          "Communication and languages: song and visual arts",
-          "Motor development",
-        ],
         activities: [
           "Sensory play with artificial snow (bicarbonate of soda + shaving foam)",
           "The song “Cold, cold” with gestures and movement",
@@ -182,11 +234,6 @@ export const en: Dictionary = {
           "Recognise bright colours by handling flowers.",
           "Encourage care for the natural environment.",
         ],
-        areas: [
-          "Discovering the environment: the plant life cycle",
-          "Attitudes of care and respect",
-          "Fine motor skills",
-        ],
         activities: [
           "Planting tulip bulbs in individual pots",
           "Daily growth diary with drawings",
@@ -214,11 +261,6 @@ export const en: Dictionary = {
           "Enjoy sensory play with water and sand safely.",
           "Link sea vocabulary to real objects.",
           "Develop creativity through crafts with natural materials.",
-        ],
-        areas: [
-          "Discovering the environment: the sea and the beach",
-          "Symbolic play",
-          "Visual arts",
         ],
         activities: [
           "Water play with cups, funnels and sieves",

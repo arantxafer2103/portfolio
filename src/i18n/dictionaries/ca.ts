@@ -10,6 +10,7 @@ export const ca: Dictionary = {
     experience: "Experiència",
     education: "Formació",
     methodology: "Metodologia",
+    digital: "Tecnologia",
     programming: "Programació",
     contact: "Contacte",
     skip: "Salta al contingut",
@@ -76,32 +77,93 @@ export const ca: Dictionary = {
     intro:
       "És la metodologia d'anglès primerenc amb què he treballat a l'aula. Parteix d'una idea senzilla: si l'anglès s'introdueix abans que entrin en joc la traducció i la correcció d'errors, s'adquireix de manera natural, igual que la llengua materna. Les sessions duren una hora, són 100% en anglès i roten per sis espais o corners.",
     corners: [
-      "Assemblea inicial: emocions, dia, temps, colors i nombres per entrar a l'idioma jugant.",
-      "Sons, pronunciació i primeres passes de lectoescriptura en anglès.",
-      "Moviment i psicomotricitat: l'idioma també s'aprèn amb el cos.",
-      "Art i petits experiments STEM en anglès.",
-      "Contacontes i comprensió lectora amb històries pròpies del mètode.",
-      "Recursos perquè les famílies continuïn practicant a casa.",
+      {
+        desc: "Assemblea inicial: emocions, dia, temps, colors i nombres per entrar a l'idioma jugant.",
+        detail:
+          "Obre la sessió amb jocs d'assemblea i escalfament. Ens saludem, expliquem com ens sentim, parlem del dia i del temps i repassem colors i nombres: una rutina que dona seguretat i posa el grup en «mode anglès».",
+      },
+      {
+        desc: "Sons, pronunciació i primeres passes de lectoescriptura en anglès.",
+        detail:
+          "Amb el mètode GLP Phonics es treballen la pronunciació i la comprensió auditiva: sons, cançons i jocs que preparen el camí cap a la lectoescriptura en anglès.",
+      },
+      {
+        desc: "Moviment i psicomotricitat: l'idioma també s'aprèn amb el cos.",
+        detail:
+          "Jocs col·laboratius basats en el moviment. El vocabulari s'entén i es fixa amb el cos mentre es treballen la psicomotricitat, la coordinació i la cooperació.",
+      },
+      {
+        desc: "Art i petits experiments STEM en anglès.",
+        detail:
+          "Un espai per a la imaginació, la creativitat i l'expressió artística: manualitats i petits experiments STEM connectats amb el tema de la sessió, sempre en anglès.",
+      },
+      {
+        desc: "Contacontes i comprensió lectora amb històries pròpies del mètode.",
+        detail:
+          "Contacontes amb les històries del mètode per desenvolupar la comprensió i l'expressió oral. Els infants manipulen escenes i personatges i recreen la història.",
+      },
+      {
+        desc: "Recursos perquè les famílies continuïn practicant a casa.",
+        detail:
+          "Blended learning: les famílies reben recursos digitals i imprimibles per continuar practicant a casa i donar continuïtat al que s'ha après a l'aula.",
+      },
     ],
+    materialsLabel: "Materials del mètode",
+    openLabel: "Veure'n més",
     callout:
       "A l'aula combino aquests corners amb materials sensorials i manipulatius — flashcards, mystery boxes, peluixos, mocadors de colors — perquè cada sessió tingui sempre un component de joc, moviment i conte.",
     credit: "Metodologia desenvolupada per Great Little People —",
+  },
+  digital: {
+    eyebrow: "Competència digital",
+    title: "Tecnologia, gamificació i IA",
+    intro:
+      "Faig servir la tecnologia com a aliada del joc, no com a substituta: preparo materials visuals i interactius, dissenyo dinàmiques gamificades i em recolzo en la intel·ligència artificial per planificar i adaptar les propostes a cada grup.",
+    items: [
+      {
+        title: "Materials visuals i interactius",
+        text: "Dissenyo fitxes, cartelleria d'aula, contes il·lustrats i presentacions interactives adaptades a l'edat i als objectius de cada proposta.",
+        tags: ["Canva", "Genially"],
+      },
+      {
+        title: "Gamificació",
+        text: "Converteixo el repàs i el reforç en un joc amb reptes, nivells i recompenses que mantenen la motivació i fan visible el progrés.",
+        tags: ["Reptes", "Recompenses", "Jocs interactius"],
+      },
+      {
+        title: "Intel·ligència artificial",
+        text: "Em recolzo en eines d'IA per generar idees d'activitats, adaptar i traduir materials i personalitzar el reforç, sempre amb criteri pedagògic i revisió pròpia.",
+        tags: ["IA generativa", "Personalització", "Traducció"],
+      },
+    ],
+    note: "Amb els més petits, la tecnologia es queda al costat de la preparació: a l'aula manen el joc, la manipulació i el vincle.",
   },
   programming: {
     eyebrow: "Exemple de treball",
     title: "Programació d'aula",
     intro:
-      "Programació pensada per a un curs complet amb nens i nenes de 2–3 anys, amb una línia d'aprenentatge coherent: a cada estació, el grup «viatja» a un país diferent segons el seu clima, i totes les activitats —contes, cançons, manualitats, joc sensorial— giren al voltant d'aquesta destinació, amb una mica de vocabulari en anglès. Toca una targeta per veure'n la fitxa tècnica.",
+      "Programació pensada per a un curs complet amb nens i nenes de 2–3 anys, amb una línia d'aprenentatge coherent: a cada estació, el grup «viatja» a un país diferent segons el seu clima, i totes les activitats —contes, cançons, manualitats, joc sensorial— giren al voltant d'aquesta destinació, amb una mica de vocabulari en anglès. Cada fitxa tècnica inclou la vinculació amb el currículum de Catalunya (Decret 21/2023). Toca una targeta per veure-la.",
     cta: "Veure fitxa tècnica",
     duration: "Durada: 3 setmanes",
+    decreeBadge: "Decret 21/2023 · Eixos",
     labels: {
-      objectives: "Objectius",
-      areas: "Àrees treballades",
+      tabPlan: "Proposta",
+      tabCurriculum: "Currículum",
+      objectives: "Objectius didàctics",
       activities: "Activitats",
       materials: "Materials",
       vocab: "Vocabulari en anglès",
       evaluation: "Avaluació",
       close: "Tancar",
+      eixos: "Eixos de desenvolupament i aprenentatge",
+      generalObjectives: "Objectius generals de l'etapa (art. 4)",
+      competences: "Competències específiques",
+      criteria: "Criteris d'avaluació",
+      sabers: "Sabers · primer cicle",
+      eix: "Eix",
+      competence: "CE",
+      source:
+        "Decret 21/2023, de 7 de febrer, d'ordenació dels ensenyaments de l'educació infantil (DOGC núm. 8851).",
     },
     plans: [
       {
@@ -114,11 +176,6 @@ export const ca: Dictionary = {
           "Explorar els canvis de l'entorn natural a la tardor a través dels sentits.",
           "Desenvolupar la motricitat fina mitjançant la manipulació i la classificació d'elements naturals.",
           "Iniciar el grup en vocabulari bàsic en anglès relacionat amb la tardor.",
-        ],
-        areas: [
-          "Descoberta de l'entorn: el bosc i el cicle de les fulles",
-          "Comunicació i llenguatges: contes i cançons",
-          "Coordinació ull-mà",
         ],
         activities: [
           "Recollida de fulles al pati i classificació per colors i mides",
@@ -149,11 +206,6 @@ export const ca: Dictionary = {
           "Ampliar el vocabulari relacionat amb el fred i les estacions.",
           "Fomentar l'expressió corporal i musical amb cançons d'hivern.",
         ],
-        areas: [
-          "Descoberta de l'entorn: el fred i la neu",
-          "Comunicació i llenguatges: cançó i expressió plàstica",
-          "Desenvolupament motor",
-        ],
         activities: [
           "Joc sensorial amb neu artificial (bicarbonat + escuma d'afaitar)",
           "Cançó «Fred, fred» amb gestos i moviment",
@@ -182,11 +234,6 @@ export const ca: Dictionary = {
           "Reconèixer colors vius a través de la manipulació de flors.",
           "Fomentar la cura de l'entorn natural.",
         ],
-        areas: [
-          "Descoberta de l'entorn: el cicle de vida de les plantes",
-          "Actituds de cura i respecte",
-          "Psicomotricitat fina",
-        ],
         activities: [
           "Plantació de bulbs de tulipa en testos individuals",
           "Registre diari del creixement amb dibuixos",
@@ -214,11 +261,6 @@ export const ca: Dictionary = {
           "Gaudir del joc sensorial amb aigua i sorra de manera segura.",
           "Associar vocabulari del mar a elements reals.",
           "Desenvolupar la creativitat amb manualitats fetes amb elements naturals.",
-        ],
-        areas: [
-          "Descoberta de l'entorn: el mar i la platja",
-          "Joc simbòlic",
-          "Expressió plàstica",
         ],
         activities: [
           "Joc d'aigua amb gots, embuts i coladors",

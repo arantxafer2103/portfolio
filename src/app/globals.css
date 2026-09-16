@@ -19,10 +19,12 @@
   --coral: #c8613f;
   --coral-soft: #f4dace;
   --on-accent: #ffffff;
+  color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    color-scheme: dark;
     --ground: #1c1417;
     --surface: #251b1f;
     --surface-soft: #31242a;
@@ -100,9 +102,14 @@ h3 {
   border-radius: 58% 42% 55% 45% / 48% 56% 44% 52%;
 }
 
-/* ---------- plan dialog ---------- */
+/* ---------- sheet dialog ---------- */
 
-dialog.plan-dialog {
+.sheet-dialog .overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+
+dialog.sheet-dialog {
   margin: auto;
   width: min(560px, calc(100% - 2.5rem));
   max-width: none;
@@ -123,12 +130,12 @@ dialog.plan-dialog {
     display 0.3s allow-discrete;
 }
 
-dialog.plan-dialog[open] {
+dialog.sheet-dialog[open] {
   opacity: 1;
   transform: none;
 }
 
-dialog.plan-dialog::backdrop {
+dialog.sheet-dialog::backdrop {
   background: rgb(20 14 16 / 0);
   transition:
     background 0.3s ease,
@@ -136,22 +143,22 @@ dialog.plan-dialog::backdrop {
     display 0.3s allow-discrete;
 }
 
-dialog.plan-dialog[open]::backdrop {
+dialog.sheet-dialog[open]::backdrop {
   background: rgb(20 14 16 / 0.55);
 }
 
 @starting-style {
-  dialog.plan-dialog[open] {
+  dialog.sheet-dialog[open] {
     opacity: 0;
     transform: translateY(18px) scale(0.97);
   }
-  dialog.plan-dialog[open]::backdrop {
+  dialog.sheet-dialog[open]::backdrop {
     background: rgb(20 14 16 / 0);
   }
 }
 
 @media (max-width: 640px) {
-  dialog.plan-dialog {
+  dialog.sheet-dialog {
     margin: auto 0 0;
     width: 100%;
     max-height: 90dvh;
@@ -159,7 +166,7 @@ dialog.plan-dialog[open]::backdrop {
     transform: translateY(100%);
   }
   @starting-style {
-    dialog.plan-dialog[open] {
+    dialog.sheet-dialog[open] {
       transform: translateY(100%);
     }
   }
@@ -259,15 +266,28 @@ dialog.plan-dialog[open]::backdrop {
   }
 
   .season-card:hover .season-icon,
-  .season-card:focus-visible .season-icon {
+  .season-card:focus-visible .season-icon,
+  .group:hover .digital-icon {
     animation: wiggle 0.6s ease;
+  }
+
+  .tab-panel {
+    animation: rise 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .group:hover .xp-fill {
+    width: 100%;
+  }
+
+  .xp-fill {
+    transition: width 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   @supports (animation-timeline: view()) {
     .reveal {
       animation: rise linear both;
       animation-timeline: view();
-      animation-range: entry 5% cover 30%;
+      animation-range: entry 0% entry 70%;
     }
   }
 

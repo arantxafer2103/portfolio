@@ -158,6 +158,32 @@ export function HomeIcon({ className }: IconProps) {
   );
 }
 
+export function PlusIcon({ className }: IconProps) {
+  return (
+    <svg {...base} strokeWidth={2.2} className={className}>
+      <path d="M12 5v14M5 12h14" />
+    </svg>
+  );
+}
+
+export function TrophyIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M8 4h8v5a4 4 0 0 1-8 0V4Z" />
+      <path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4" />
+    </svg>
+  );
+}
+
+export function SparklesIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M10 3.5 11.6 8.4 16.5 10l-4.9 1.6L10 16.5l-1.6-4.9L3.5 10l4.9-1.6Z" />
+      <path d="M18 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8ZM17.5 3l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6Z" />
+    </svg>
+  );
+}
+
 export function GlobeIcon({ className }: IconProps) {
   return (
     <svg {...base} className={className}>
