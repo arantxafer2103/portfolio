@@ -1,57 +1,53 @@
-import { corners } from "@/lib/data";
-import { cornerIcons } from "./icons";
+import type { Dictionary } from "@/i18n/types";
+import {
+  BookIcon,
+  CircleIcon,
+  HomeIcon,
+  PaletteIcon,
+  RunIcon,
+  SoundIcon,
+} from "./icons";
+import { SectionHead } from "./section-head";
 
-export function Methodology() {
+const corners = [
+  { title: "Start Corner", Icon: CircleIcon },
+  { title: "Phonics Corner", Icon: SoundIcon },
+  { title: "Active Corner", Icon: RunIcon },
+  { title: "Creative Corner", Icon: PaletteIcon },
+  { title: "Reading Corner", Icon: BookIcon },
+  { title: "Home Corner", Icon: HomeIcon },
+];
+
+export function Methodology({ dict }: { dict: Dictionary["methodology"] }) {
   return (
-    <section id="metodologia" className="mx-auto max-w-4xl px-5 py-11">
-      <div className="mb-7">
-        <p className="mb-2.5 text-xs font-bold uppercase tracking-[0.14em] text-ink-soft">
-          Metodología
-        </p>
-        <h2 className="text-[clamp(1.6rem,2.3vw+1rem,2.2rem)] font-semibold">
-          Inglés desde la cuna: Great Little People
-        </h2>
-      </div>
-      <p className="mb-6.5 max-w-[70ch] text-ink-soft">
-        Es la metodología de inglés temprano con la que he trabajado en el
-        aula. Parte de una idea sencilla: si el inglés se introduce antes de
-        que entren en juego la traducción y la corrección de errores, se
-        adquiere igual que se adquirió la lengua materna. Las sesiones son
-        de una hora, 100% en inglés, y rotan por seis espacios o{" "}
-        <em>corners</em>.
+    <section id="metodologia" className="mx-auto max-w-5xl px-5 py-12">
+      <SectionHead eyebrow={dict.eyebrow} title={dict.title} />
+      <p className="reveal mb-7 max-w-[70ch] text-ink-soft">{dict.intro}</p>
+      <ul className="grid grid-cols-3 gap-4 max-[760px]:grid-cols-2 max-[480px]:grid-cols-1">
+        {corners.map(({ title, Icon }, i) => (
+          <li
+            key={title}
+            style={{ animationRange: `entry ${5 + (i % 3) * 8}% cover ${30 + (i % 3) * 8}%` }}
+            className="reveal group rounded-[18px] border border-line bg-surface p-5 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-rose hover:shadow-[0_18px_36px_-24px_rgba(193,105,122,0.55)]"
+          >
+            <span className="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-rose-soft transition-colors duration-300 group-hover:bg-rose">
+              <Icon className="h-5 w-5 stroke-rose transition-colors duration-300 group-hover:stroke-white" />
+            </span>
+            <h3 className="mb-1 text-base font-semibold">{title}</h3>
+            <p className="text-[0.88rem] text-ink-soft">{dict.corners[i]}</p>
+          </li>
+        ))}
+      </ul>
+      <p className="reveal mt-5 rounded-2xl bg-surface-soft px-5 py-4 text-[0.95rem] text-ink-soft">
+        {dict.callout}
       </p>
-      <div className="grid grid-cols-3 gap-4 max-[720px]:grid-cols-2 max-[460px]:grid-cols-1">
-        {corners.map((c) => {
-          const Icon = cornerIcons[c.icon];
-          return (
-            <div
-              key={c.title}
-              className="rounded-[18px] border border-line bg-surface p-4.5"
-            >
-              <div className="mb-3 flex h-[38px] w-[38px] items-center justify-center rounded-[10px] bg-rose-soft">
-                <Icon className="h-5 w-5 stroke-rose" />
-              </div>
-              <b className="font-display mb-1 block text-[0.98rem] font-semibold">
-                {c.title}
-              </b>
-              <p className="m-0 text-[0.86rem] text-ink-soft">{c.desc}</p>
-            </div>
-          );
-        })}
-      </div>
-      <div className="mt-5 rounded-2xl bg-surface-soft p-4.5 px-4.5 text-sm text-ink-soft">
-        En el aula combino estos corners con materiales sensoriales y
-        manipulativos — flashcards, mystery boxes, teddys, pañuelos de
-        colores — para que cada sesión tenga siempre un componente de juego,
-        movimiento y cuento.
-      </div>
-      <p className="mt-5 text-sm text-ink-soft">
-        Metodología desarrollada por Great Little People —{" "}
+      <p className="mt-4 text-sm text-ink-soft">
+        {dict.credit}{" "}
         <a
           href="https://greatlittlepeople.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-semibold text-rose underline"
+          className="font-semibold text-rose underline underline-offset-2"
         >
           greatlittlepeople.com
         </a>

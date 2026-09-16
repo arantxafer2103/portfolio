@@ -1,56 +1,75 @@
+import Image from "next/image";
+import type { CSSProperties } from "react";
+import type { Dictionary } from "@/i18n/types";
+import photo from "@/assets/arantxa.webp";
 import { MailIcon, PhoneIcon, PinIcon } from "./icons";
 
-export function Hero() {
+const delay = (ms: number) => ({ "--delay": `${ms}ms` }) as CSSProperties;
+
+const chip =
+  "inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 py-2 text-sm font-semibold transition-[border-color,transform] hover:-translate-y-0.5 hover:border-rose";
+
+export function Hero({ dict }: { dict: Dictionary["hero"] }) {
   return (
-    <header id="inicio" className="mx-auto max-w-4xl px-5 pb-10 pt-14">
-      <div className="grid grid-cols-[180px_1fr] items-center gap-10 max-[640px]:grid-cols-1 max-[640px]:justify-items-center max-[640px]:text-center">
-        <div className="relative h-[180px] w-[180px]">
+    <header id="inicio" className="mx-auto max-w-5xl px-5 pb-12 pt-14">
+      <div className="grid grid-cols-[230px_1fr] items-center gap-12 max-[720px]:grid-cols-1 max-[720px]:justify-items-center max-[720px]:gap-8 max-[720px]:text-center">
+        <div className="enter-pop relative h-[230px] w-[230px] max-[720px]:h-[200px] max-[720px]:w-[200px]">
           <div
-            className="flex h-[180px] w-[180px] items-center justify-center rounded-full border-[3px] border-surface font-display text-5xl font-semibold text-rose shadow-[0_24px_48px_-28px_rgba(43,32,39,0.38)]"
-            style={{
-              background:
-                "linear-gradient(150deg, var(--rose-soft), var(--ochre-soft))",
-            }}
-          >
-            AF
-          </div>
-          <div className="absolute -right-1 -top-1.5 h-[22px] w-[22px] rounded-full bg-sage" />
-          <div className="absolute -left-2.5 bottom-2 h-[14px] w-[14px] rounded-full bg-coral" />
+            aria-hidden="true"
+            className="photo-frame absolute inset-[-10px] bg-rose-soft"
+          />
+          <Image
+            src={photo}
+            alt={dict.photoAlt}
+            priority
+            placeholder="blur"
+            sizes="230px"
+            className="photo-frame relative h-full w-full border-4 border-surface object-cover shadow-[0_24px_48px_-28px_rgba(43,32,39,0.45)]"
+          />
+          <span
+            aria-hidden="true"
+            className="float absolute -right-3 -top-2 h-7 w-7 rounded-full bg-sage"
+          />
+          <span
+            aria-hidden="true"
+            style={delay(1200)}
+            className="float absolute -left-4 bottom-6 h-4 w-4 rounded-full bg-coral"
+          />
+          <span
+            aria-hidden="true"
+            style={delay(2400)}
+            className="float absolute -bottom-1 right-8 h-3 w-3 rounded-full bg-ochre"
+          />
         </div>
+
         <div>
-          <h1 className="text-[clamp(2.2rem,4.5vw+1rem,3.6rem)] leading-[1.05] font-semibold">
+          <h1
+            style={delay(120)}
+            className="enter text-[clamp(2.4rem,4.5vw+1rem,3.9rem)] leading-[1.02] font-semibold"
+          >
             Arantxa Fernández
           </h1>
-          <p className="mt-1.5 text-lg font-semibold text-rose">
-            Maestra de Educación Infantil · 0–3 años
+          <p style={delay(240)} className="enter mt-2 text-lg font-semibold text-rose">
+            {dict.role}
           </p>
-          <p className="mt-4 max-w-[60ch] text-ink-soft">
-            Formada en el Grado Superior de Educación Infantil y terminando
-            el Grado en Educación Infantil en la UNED. Combino la atención a
-            la primera infancia con la docencia de refuerzo escolar e
-            idiomas. Me define la empatía, la organización y la capacidad de
-            adaptarme a edades y entornos distintos — y las ganas de seguir
-            aprendiendo en un equipo que crea en el juego y el
-            acompañamiento emocional.
+          <p style={delay(360)} className="enter mt-4 max-w-[60ch] text-ink-soft">
+            {dict.bio}
           </p>
-          <div className="mt-5 flex flex-wrap gap-2.5 max-[640px]:justify-center">
-            <a
-              href="mailto:arantxafer2103@gmail.com"
-              className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 py-2 text-sm font-semibold transition-colors hover:border-rose"
-            >
+          <div
+            style={delay(480)}
+            className="enter mt-6 flex flex-wrap gap-2.5 max-[720px]:justify-center"
+          >
+            <a href="mailto:arantxafer2103@gmail.com" className={chip}>
               <MailIcon className="h-[15px] w-[15px] shrink-0 stroke-rose" />
               arantxafer2103@gmail.com
             </a>
-            <a
-              href="tel:+34645018085"
-              className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 py-2 text-sm font-semibold transition-colors hover:border-rose"
-            >
+            <a href="tel:+34645018085" className={chip}>
               <PhoneIcon className="h-[15px] w-[15px] shrink-0 stroke-rose" />
               645 01 80 85
             </a>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 py-2 text-sm font-semibold">
               <PinIcon className="h-[15px] w-[15px] shrink-0 stroke-rose" />
-              Esparreguera, Barcelona
+              {dict.location}
             </span>
           </div>
         </div>

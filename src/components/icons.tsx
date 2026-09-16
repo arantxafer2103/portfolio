@@ -47,8 +47,8 @@ export function CapIcon({ className }: IconProps) {
 export function LeafIcon({ className }: IconProps) {
   return (
     <svg {...base} className={className}>
-      <path d="M12 3c-4.4 2-8 6-8 12a8 8 0 0 0 8-8 8 8 0 0 0 8 8c0-6-3.6-10-8-12Z" />
-      <path d="M4 21c4-4 8-8 16-16" />
+      <path d="M5 19C5 10.5 10.5 5 19.5 4.5 19 13.5 13.5 19 5 19Z" />
+      <path d="M3.5 20.5 14 10M9.5 14.5h3.8M12 12V8.8" />
     </svg>
   );
 }
@@ -158,18 +158,18 @@ export function HomeIcon({ className }: IconProps) {
   );
 }
 
-export const cornerIcons = {
-  circle: CircleIcon,
-  sound: SoundIcon,
-  run: RunIcon,
-  palette: PaletteIcon,
-  book: BookIcon,
-  home: HomeIcon,
-};
+export function GlobeIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" />
+    </svg>
+  );
+}
 
 export const seasonIcons = {
-  leaf: LeafIcon,
-  snow: SnowIcon,
-  sprout: SproutIcon,
-  sun: SunIcon,
+  autumn: LeafIcon,
+  winter: SnowIcon,
+  spring: SproutIcon,
+  summer: SunIcon,
 };
