@@ -79,7 +79,11 @@ export const ca: Dictionary = {
         years: "2020–2022",
       },
     ],
-    languages: ["Castellà", "Català", "Anglès"],
+    languages: [
+      { name: "Castellà", level: "Llengua materna" },
+      { name: "Català", level: "C1" },
+      { name: "Anglès", level: "B1" },
+    ],
   },
   methodology: {
     eyebrow: "Metodologia",

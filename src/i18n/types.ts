@@ -47,7 +47,7 @@ export type Dictionary = {
     studiesLabel: string;
     languagesLabel: string;
     studies: { title: string; place: string; years: string }[];
-    languages: string[];
+    languages: { name: string; level: string }[];
   };
   methodology: {
     eyebrow: string;

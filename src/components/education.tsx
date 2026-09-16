@@ -29,13 +29,13 @@ export function Education({ dict }: { dict: Dictionary["education"] }) {
         </div>
         <div className="reveal rounded-[22px] border border-line bg-surface p-6">
           <h3 className={label}>{dict.languagesLabel}</h3>
-          <ul className="flex flex-wrap gap-2.5">
+          <ul className="flex flex-col gap-3">
             {dict.languages.map((l) => (
-              <li
-                key={l}
-                className="rounded-full bg-sage-soft px-4 py-2 font-semibold text-sage"
-              >
-                {l}
+              <li key={l.name} className="flex items-center justify-between gap-3">
+                <span className="font-semibold">{l.name}</span>
+                <span className="rounded-full bg-sage-soft px-3 py-1 text-sm font-bold text-sage">
+                  {l.level}
+                </span>
               </li>
             ))}
           </ul>

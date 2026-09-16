@@ -79,7 +79,11 @@ export const es: Dictionary = {
         years: "2020–2022",
       },
     ],
-    languages: ["Castellano", "Catalán", "Inglés"],
+    languages: [
+      { name: "Castellano", level: "Nativo" },
+      { name: "Catalán", level: "C1" },
+      { name: "Inglés", level: "B1" },
+    ],
   },
   methodology: {
     eyebrow: "Metodología",
