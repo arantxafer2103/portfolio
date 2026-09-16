@@ -5,6 +5,7 @@ export type Job = {
   place: string;
   dates: string;
   desc: string;
+  current?: boolean;
 };
 
 export type Plan = {
@@ -32,7 +33,14 @@ export type Dictionary = {
     language: string;
   };
   hero: { role: string; bio: string; location: string; photoAlt: string };
-  experience: { eyebrow: string; title: string; jobs: Job[] };
+  experience: {
+    eyebrow: string;
+    title: string;
+    ongoing: string;
+    prev: string;
+    next: string;
+    jobs: Job[];
+  };
   education: {
     eyebrow: string;
     title: string;
